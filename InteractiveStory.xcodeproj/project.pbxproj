@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E68FDD01EC6C96900CC3614 /* HappyEnding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E68FDCD1EC6C96900CC3614 /* HappyEnding.wav */; };
+		2E68FDD11EC6C96900CC3614 /* Ominous.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E68FDCE1EC6C96900CC3614 /* Ominous.wav */; };
+		2E68FDD21EC6C96900CC3614 /* PageTurn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E68FDCF1EC6C96900CC3614 /* PageTurn.wav */; };
+		2E68FDD41EC6C9CF00CC3614 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68FDD31EC6C9CE00CC3614 /* Audio.swift */; };
 		2EC1FF971EB6DEA000569D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1FF961EB6DEA000569D5C /* AppDelegate.swift */; };
 		2EC1FF991EB6DEA000569D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1FF981EB6DEA000569D5C /* ViewController.swift */; };
 		2EC1FF9C1EB6DEA000569D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC1FF9A1EB6DEA000569D5C /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E68FDCD1EC6C96900CC3614 /* HappyEnding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HappyEnding.wav; sourceTree = "<group>"; };
+		2E68FDCE1EC6C96900CC3614 /* Ominous.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ominous.wav; sourceTree = "<group>"; };
+		2E68FDCF1EC6C96900CC3614 /* PageTurn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PageTurn.wav; sourceTree = "<group>"; };
+		2E68FDD31EC6C9CE00CC3614 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		2EC1FF931EB6DEA000569D5C /* InteractiveStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC1FF961EB6DEA000569D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EC1FF981EB6DEA000569D5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E68FDCC1EC6C92800CC3614 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E68FDCD1EC6C96900CC3614 /* HappyEnding.wav */,
+				2E68FDCE1EC6C96900CC3614 /* Ominous.wav */,
+				2E68FDCF1EC6C96900CC3614 /* PageTurn.wav */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2E68FDD51EC6C9D700CC3614 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E68FDD31EC6C9CE00CC3614 /* Audio.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		2EC1FF8A1EB6DEA000569D5C = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +97,8 @@
 				2EC1FFAE1EB6E6CB00569D5C /* Models */,
 				2EE547181EC1821700E65B76 /* Error Handling */,
 				2EC1FFAC1EB6E6BE00569D5C /* Delegate */,
+				2E68FDD51EC6C9D700CC3614 /* Helpers */,
+				2E68FDCC1EC6C92800CC3614 /* Resources */,
 				2EC1FFAA1EB6E6AA00569D5C /* Supporting Files */,
 			);
 			path = InteractiveStory;
@@ -190,8 +218,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E68FDD11EC6C96900CC3614 /* Ominous.wav in Resources */,
 				2EC1FFA11EB6DEA000569D5C /* LaunchScreen.storyboard in Resources */,
 				2EC1FF9E1EB6DEA000569D5C /* Assets.xcassets in Resources */,
+				2E68FDD01EC6C96900CC3614 /* HappyEnding.wav in Resources */,
+				2E68FDD21EC6C96900CC3614 /* PageTurn.wav in Resources */,
 				2EC1FF9C1EB6DEA000569D5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E68FDD41EC6C9CF00CC3614 /* Audio.swift in Sources */,
 				2EC1FF991EB6DEA000569D5C /* ViewController.swift in Sources */,
 				2EC1FF971EB6DEA000569D5C /* AppDelegate.swift in Sources */,
 				2EE547151EBECC2000E65B76 /* PageController.swift in Sources */,

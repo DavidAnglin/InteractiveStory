@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Keyboard Methods -
     func keyboardWillShow(_ notification: Notification) {
         if let info = notification.userInfo, let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             let frame = keyboardFrame.cgRectValue
@@ -80,6 +81,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Text Field Delegate -
 extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
