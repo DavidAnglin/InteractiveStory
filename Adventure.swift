@@ -9,24 +9,39 @@
 import Foundation
 
 struct Adventure {
-    static var story: Page {
-        let returnTrip = Page(story: .returnTrip)
-        let touchdown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
-        let homeward = returnTrip.addChoiceWith(title: "Continue home to Earth", story: .homeward)
-        let rover = touchdown.addChoiceWith(title: "Explore the Rover", story: .rover)
-        let crate = touchdown.addChoiceWith(title: "Open the Crate", story: .crate)
+    
+    struct TitleConstants {
+        static let stopInvestigate = "Stop and Investigate"
+        static let homeToEarth = "Continue Home to Earth"
+        static let exploreRover = "Explore the Rover"
+        static let openCrate = "Open the Crate"
+        static let homeTitle = "Continue Home to Earth"
+        static let exploreCoordinates = "Explore the Coordinates"
+        static let backToMars = "Head back to Mars"
+        static let returnToEarth = "Return to Earth"
+        static let faintLight = "Continue towards faint light"
+        static let refillAndExplore = "Refill the ship and explore the rover"
+        static let useKey = "Use the key"
+    }
+    
+    static func story(withName name: String) -> Page {
+        let returnTrip = Page(story: .returnTrip(name: name))
+        let touchdown = returnTrip.addChoiceWith(title: TitleConstants.stopInvestigate, story: .touchDown)
+        let homeward = returnTrip.addChoiceWith(title: TitleConstants.exploreRover, story: .homeward)
+        let rover = touchdown.addChoiceWith(title: TitleConstants.exploreRover, story: .rover(name: name))
+        let crate = touchdown.addChoiceWith(title: TitleConstants.openCrate, story: .crate)
         
-        homeward.addChoiceWith(title: "Head back to Mars", page: touchdown)
-        let home = homeward.addChoiceWith(title: "Continue Home to Earth", story: .home)
+        homeward.addChoiceWith(title: TitleConstants.backToMars, page: touchdown)
+        let home = homeward.addChoiceWith(title: TitleConstants.homeToEarth, story: .home)
         
-        let cave = rover.addChoiceWith(title: "Explore the Coordinates", story: .cave)
-        rover.addChoiceWith(title: "Return to Earth", page: home)
+        let cave = rover.addChoiceWith(title: TitleConstants.exploreCoordinates, story: .cave)
+        rover.addChoiceWith(title: TitleConstants.returnToEarth, page: home)
         
-        cave.addChoiceWith(title: "Continue towards faint light", story: .droid)
-        cave.addChoiceWith(title: "Refill the ship and explore the rover", page: rover)
+        cave.addChoiceWith(title: TitleConstants.faintLight, story: .droid(name: name))
+        cave.addChoiceWith(title: TitleConstants.refillAndExplore, page: rover)
         
-        crate.addChoiceWith(title: "Explore the Rover", page: rover)
-        crate.addChoiceWith(title: "Use the key", story: .monster)
+        crate.addChoiceWith(title: TitleConstants.exploreRover, page: rover)
+        crate.addChoiceWith(title: TitleConstants.useKey, story: .monster)
         
         return returnTrip
     }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,30 +29,47 @@
                                 <rect key="frame" x="116" y="589" width="143" height="30"/>
                                 <state key="normal" title="Start Your Adventure"/>
                                 <connections>
-                                    <segue destination="OYS-K1-vOt" kind="show" id="tT8-Yj-LpU"/>
+                                    <segue destination="OYS-K1-vOt" kind="show" identifier="startAdventure" id="tT8-Yj-LpU"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLO-K4-A9r">
+                                <rect key="frame" x="40" y="519" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pjd-Iv-yCk"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M9g-a9-Gud" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22D-pL-cBi"/>
+                            <constraint firstItem="bLO-K4-A9r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2lK-VA-oH2"/>
                             <constraint firstItem="n29-RW-OCX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4Ta-Nl-ScI"/>
                             <constraint firstAttribute="trailing" secondItem="n29-RW-OCX" secondAttribute="trailing" id="5Gq-av-Q0p"/>
                             <constraint firstItem="n29-RW-OCX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Em0-MT-uyh"/>
+                            <constraint firstItem="M9g-a9-Gud" firstAttribute="top" secondItem="bLO-K4-A9r" secondAttribute="bottom" constant="40" id="V2h-rw-qxf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M9g-a9-Gud" secondAttribute="bottom" constant="48" id="Ww7-lg-ObZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bLO-K4-A9r" secondAttribute="trailing" constant="24" id="iM2-vG-a2q"/>
+                            <constraint firstItem="bLO-K4-A9r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="nyZ-uF-BgM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n29-RW-OCX" secondAttribute="bottom" id="zQF-Ce-4ZF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3He-73-6HW"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="bLO-K4-A9r" id="SYi-aa-V1W"/>
+                        <outlet property="textFieldBottomConstraint" destination="V2h-rw-qxf" id="RVQ-eS-h0V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="521" y="95"/>
         </scene>
-        <!--View Controller-->
+        <!--Page Controller-->
         <scene sceneID="T1C-eI-TGp">
             <objects>
-                <viewController id="OYS-K1-vOt" sceneMemberID="viewController">
+                <viewController id="OYS-K1-vOt" customClass="PageController" customModule="InteractiveStory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5mE-eM-Uwb"/>
                         <viewControllerLayoutGuide type="bottom" id="37u-kP-uFF"/>
